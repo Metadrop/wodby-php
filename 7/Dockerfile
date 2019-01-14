@@ -331,6 +331,7 @@ EXPOSE 9000
 
 COPY templates /etc/gotpl/
 COPY docker-entrypoint.sh /
+RUN chown $WODBY_USER_ID:$WODBY_GROUP_ID /docker-entrypoint.sh
 COPY bin /usr/local/bin/
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
